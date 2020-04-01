@@ -11,9 +11,9 @@ makedepends=('git')
 source=("${pkgname%-git}::git+https://github.com/johannesthoma/mmap_allocator.git#commit=6081a92a3b0f36156b5102f7c7071b2b6da1afe0"
         "${pkgname%-git}.pc")
 md5sums=('SKIP'
-         '217274499a64db267f92e1e47a4ec7f7')
+         '696c30059091e2acbd2aa0e7bdcc2fd6')
 sha256sums=('SKIP'
-            '1f95dd1134920c862c48dd680524fbea91c3450e29cbcfe6e120bfaf8ef800fb')
+            '8a2d7e6d14683f351dec9dd48fe62c6240d0e2c6676b0c3f1e75186287658e7c')
 
 pkgver() {
     cd "${pkgname%-git}"
