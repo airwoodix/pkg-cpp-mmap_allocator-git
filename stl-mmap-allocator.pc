@@ -3,7 +3,7 @@ exec_prefix=${prefix}
 includedir=${prefix}/include
 libdir=${exec_prefix}/lib
 
-Name: stl-mmap-alloc
+Name: stl-mmap-allocator
 Description: A STL allocator that mmaps files
 Version: git
 Cflags: -I${includedir}
