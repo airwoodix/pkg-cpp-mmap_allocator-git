@@ -1,14 +1,14 @@
 # Package maintainer: airwoodix <airwoodix at posteo dot me>
 
 pkgname=stl-mmap-allocator-git
-pkgver=r113.g6081a92
+pkgver=r116.g0eb4d80
 pkgrel=1
 pkgdesc="A STL allocator that mmaps files"
 arch=('i686' 'x86_64')
 url="https://github.com/johannesthoma/mmap_allocator"
 license=('LGPL')
 makedepends=('git')
-source=("${pkgname%-git}::git+https://github.com/johannesthoma/mmap_allocator.git#commit=6081a92a3b0f36156b5102f7c7071b2b6da1afe0"
+source=("${pkgname%-git}::git+https://github.com/airwoodix/mmap_allocator.git#branch=fix-makefile-install-cleanup"
         "${pkgname%-git}.pc")
 md5sums=('SKIP'
          '696c30059091e2acbd2aa0e7bdcc2fd6')
@@ -32,8 +32,7 @@ build() {
 
 package() {
     cd "${srcdir}/${pkgname%-git}"
-    mkdir -p "${pkgdir}/usr/lib" "${pkgdir}/usr/include"
-    make PREFIX="${pkgdir}/usr" install
+    make DESTDIR="${pkgdir}" install
     install -D -m 644 "../${pkgname%-git}.pc" \
 	    "${pkgdir}/usr/share/pkgconfig/${pkgname%-git}.pc"
 }
